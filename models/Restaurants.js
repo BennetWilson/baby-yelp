@@ -28,5 +28,5 @@ restaurants.init(
           }
         );
         
-        module.exports = restaurants;
+        module.exports = Restaurants;
 
