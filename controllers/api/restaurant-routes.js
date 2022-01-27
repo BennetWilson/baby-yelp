@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Restaurant } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try{
         const restaurantData = await Restaurant.findAll({
             include: [User],
@@ -30,7 +30,7 @@ router.get('signup', (req, res) => {
     res.render('signup');
 });
 
-router.get('/restaurant/:id', async (req, res) => {
+router.get('/restaurant/:id', withAuth, async (req, res) => {
     try{
         const restaurantData = await Restaurant.findByPk({
             where: {
@@ -40,7 +40,7 @@ router.get('/restaurant/:id', async (req, res) => {
                 User,
                 {
                     model: Review,
-                    icnlude: [User]
+                    include: [User]
                 }
             ]
         });
