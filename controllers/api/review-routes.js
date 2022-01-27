@@ -3,18 +3,33 @@ const { Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
-    try{ 
-     const reviewData = await Review.findAll({
-       include: [User],
-     });
-   // serialize the data
-     const reviews = reviewData.map((review) => review.get({ plain: true }));
-     
-     res.render('single-review', {reviews, loggedIn: req.session.loggedIn});
-   } catch(err) {
-       res.status(500).json(err);
-   }
+  try{ 
+   const reviewData = await Review.findAll({
+     include: [User],
    });
+   const reviews = reviewData.map((review) => review.get({ plain: true }));
+   
+   res.render(reviewData);
+ } catch(err) {
+     res.status(500).json(err);
+ }
+ });
+
+ router.get('/:id', withAuth, async (req, res) => {
+  try{ 
+   const reviewData = await Review.findByPk({
+    where: {
+      id: req.params.id,
+    },
+     include: [User],
+   });
+   const reviews = reviewData.map((review) => review.get({ plain: true }));
+   
+   res.render(reviewData);
+ } catch(err) {
+     res.status(500).json(err);
+ }
+ });
 
 router.post('/', withAuth, async (req, res) => {
   try {
