@@ -1,14 +1,20 @@
 [
     {
       "text": "Comment text 1",
-      "title": "Review 1"
+      "title": "Review 1",
+      "user_id": 1,
+      "restaurant_id": 1
     },
     {
         "text": "Comment text 2",
-        "title": "Review 2"
+        "title": "Review 2",
+        "user_id": 2,
+        "restaurant_id": 2
     },
     {
         "text": "Comment text 3",
-        "title": "Review 3"
+        "title": "Review 3",
+        "user_id": 3,
+        "restaurant_id": 3
     }
   ]
