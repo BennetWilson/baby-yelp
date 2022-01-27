@@ -1,24 +1,25 @@
 const router = require('express').Router();
-const { Restaurant, User } = require('../../models');
+const { Restaurant, User, Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
-    try{
+router.get('/', async (req, res) => {
+    // try{
         const restaurantData = await Restaurant.findAll({
-            include: [User],
+            // include: [User],
         });
         const restaurants = restaurantData.map((restaurant) => restaurant.get({ plain: true }));
 
-        res.render('homepage', {
-            restaurants,
-            logged_in: req.session.logged_in,
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+        // res.render('homepage', {
+        //     restaurants,
+        //     logged_in: req.session.logged_in,
+        // });
+    // } catch (err) {
+    //     res.status(500).json(err);
+    // }
+    res.json(restaurants)
 });
 
-router.get('/restaurant/:id', withAuth, async (req, res) => {
+router.get('/restaurant/:id', async (req, res) => {
     try{
         const restaurantData = await Restaurant.findByPk({
             where: {
@@ -43,7 +44,7 @@ router.get('/restaurant/:id', withAuth, async (req, res) => {
     }
 });
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const newRestaurant = await Restaurant.create(req.body);
         res.status(200).json(newRestaurant);
@@ -52,12 +53,12 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-router.put('/:id', withAuth, async (req, res) => {
-    try {
+router.put('/:id', async (req, res) => {
+    // try {
         const updatedRestaurant = await Restaurant.update(
             {
                 id: req.body.id,
-                restaurant_name: req.body.category_name,
+                restaurant_name: req.body.restaurant_name,
                 description: req.body.description,
             },
             {
@@ -71,12 +72,12 @@ router.put('/:id', withAuth, async (req, res) => {
             return;
         }
         res.status(200).json(updatedRestaurant);
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    // } catch (err) {
+    //     res.status(500).json(err);
+    // }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const deletedRestaurant = await Restaurant.destroy(
             {
