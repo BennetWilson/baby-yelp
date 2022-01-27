@@ -1,17 +1,18 @@
 body {
   background-color: rgb(243, 171, 113);
   color: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.app-title {
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
   font-size: 20px;
   border: 2px, solid, whitesmoke;
   border-radius: 5px;
-}
-
-.app-title {
-  display: flex;
-  justify-content: center;
 }
 
 .flex-container {
@@ -21,4 +22,13 @@ h1 {
 
 .card {
   flex: 1;
+}
+
+.input {
+  margin: 0.5rem;
+}
+
+#long-text-input {
+  height: 200px;
+  width: 300px;
 }
