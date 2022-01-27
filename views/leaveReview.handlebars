@@ -1,8 +1,30 @@
-<h1>Baby Yelp</h1>
+<section class="app-title">
+    <h1>Baby Yelp</h1>
+</section>
 
 <section>
-    <form action="">
-        <label for="review-title"></label>
-        <input type="text" name="review-title">
+    <form action="" method="post" class="form">
+        <div>
+          <label for="review-title" class="label"
+            >Enter a title for your review</label
+          >
+          <input
+            type="text"
+            name="review-title"
+            class="input"
+            placeholder="Review Title"
+          />
+        </div>
+
+        <div>
+          <label for="review-text">Type your review</label>
+          <input
+            type="text"
+            name="review-text"
+            placeholder="Review text"
+            id="long-text-input"
+          />
+        </div>
     </form>
 </section>
+ 
