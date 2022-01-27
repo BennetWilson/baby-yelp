@@ -18,18 +18,6 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('login', (req, res) => {
-    if(req.session.logged_in) {
-        res.redirect('/');
-        return;
-    }
-    res.render('login')
-});
-
-router.get('signup', (req, res) => {
-    res.render('signup');
-});
-
 router.get('/restaurant/:id', withAuth, async (req, res) => {
     try{
         const restaurantData = await Restaurant.findByPk({
@@ -55,5 +43,55 @@ router.get('/restaurant/:id', withAuth, async (req, res) => {
     }
 });
 
+router.post('/', withAuth, async (req, res) => {
+    try {
+        const newRestaurant = await Restaurant.create(req.body);
+        res.status(200).json(newRestaurant);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const updatedRestaurant = await Restaurant.update(
+            {
+                id: req.body.id,
+                restaurant_name: req.body.category_name,
+                description: req.body.description,
+            },
+            {
+                where: {
+                    id: req.params.id,
+                },
+            }
+        )
+        if (!updatedRestaurant) {
+            res.status(404).json({ message: 'No restaurant found with this id'});
+            return;
+        }
+        res.status(200).json(updatedRestaurant);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.delete('/:id', withAuth, async (req, res) => {
+    try {
+        const deletedRestaurant = await Restaurant.destroy(
+            {
+                where: {
+                    id: req.params.id
+                }
+            });
+            if (!deletedRestaurant) {
+                res.status(404).json({ message: 'No restaurant found with this id' });
+                return;
+            }
+            res.status(200).json(deletedRestaurant);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 module.exports = router;
