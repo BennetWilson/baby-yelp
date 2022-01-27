@@ -12,12 +12,13 @@ Review.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-Restaurant.belongsTo(User,{
-    foreignKey: 'user_id'
-});
 
 Review.belongsTo(Restaurant,{
     foreignKey: 'restaurant_id'
-})
+});
+
+Restaurant.hasMany(Review,{
+  foreignKey: 'restaurant_id'
+});
 
 module.exports = {User, Review, Restaurant};
