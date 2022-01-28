@@ -3,42 +3,48 @@ const { Restaurant, User, Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
-    // try{
-        const restaurantData = await Restaurant.findAll({
-            // include: [User],
-        });
-        const restaurants = restaurantData.map((restaurant) => restaurant.get({ plain: true }));
+    try {
+        const restaurantData = await Restaurant.findAll(
+            {
+            include: [{ model: Review }],
+            },
+            {
+                where: {
+                    restaurant_id: req.body.restaurant_id,
+                },
+            }
+        );
 
+        const restaurants = restaurantData.map((restaurant) => restaurant.get({ plain: true }));
+        res.json(restaurants);
         // res.render('homepage', {
         //     restaurants,
         //     logged_in: req.session.logged_in,
         // });
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }
-    res.json(restaurants)
+    } catch (err) {
+        res.status(500).json(err);
+    }
+    
 });
 
-router.get('/restaurant/:id', async (req, res) => {
-    try{
-        const restaurantData = await Restaurant.findByPk({
-            where: {
-                id: req.params.id,
+router.get('/:id', async (req, res) => {
+    try {
+        const restaurantData = await Restaurant.findByPk(req.params.id,
+            {
+                include: [{ model: Review }],
             },
-            include: [
-                User,
-                {
-                    model: Review,
-                    include: [User]
-                }
-            ]
-        });
-        if(restaurantData) {
-            const restaurant = restaurantData.get({ plain: true});
-            res.render('single-review', {restaurant, logged_in: req.session.logged_in});
-        } else {
-            res.status(400).end();
-        }
+            {
+                where: {
+                    restaurant_id: req.body.restaurant_id,
+                },
+            }
+        );
+        if (!restaurantData) {
+            // res.render('single-review', {restaurant, logged_in: req.session.logged_in});
+            res.status(404).json({ message: 'No restaurant found with this id' });
+            return;
+        } 
+        res.status(200).json(restaurantData);
     } catch (err) {
         res.status(500).json(err);
     }
