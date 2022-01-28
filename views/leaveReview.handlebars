@@ -1,30 +1,25 @@
-<section class="app-title">
-    <h1>Baby Yelp</h1>
-</section>
-
 <section>
-    <form action="" method="post" class="form">
-        <div>
-          <label for="review-title" class="label"
-            >Enter a title for your review</label
-          >
-          <input
-            type="text"
-            name="review-title"
-            class="input"
-            placeholder="Review Title"
-          />
-        </div>
+  <form action="" method="post" class="card">
+    <div class="flex">
+      <label for="review-title" class="label">Enter a title for your review</label>
+      <input
+        type="text"
+        name="review-title"
+        class="input"
+        placeholder="Review Title"
+      />
+    </div>
 
-        <div>
-          <label for="review-text">Type your review</label>
-          <input
-            type="text"
-            name="review-text"
-            placeholder="Review text"
-            id="long-text-input"
-          />
-        </div>
-    </form>
+    <div class="flex">
+      <label for="review-text" class="label">Type your review</label>
+      <textarea
+        type="text"
+        name="review-text"
+        placeholder="Review text"
+        class="input"
+        id="long-text-input"
+      ></textarea>
+    </div>
+    <button class="login-btn">Submit Review</button>
+  </form>
 </section>
- 
