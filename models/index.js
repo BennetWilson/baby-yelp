@@ -12,7 +12,6 @@ Review.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-
 Review.belongsTo(Restaurant,{
     foreignKey: 'restaurant_id'
 });
