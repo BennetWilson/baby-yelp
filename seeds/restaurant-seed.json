@@ -1,14 +1,42 @@
 [
   {
-    "restaurant_name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area."
+    "restaurant_name": "McDonald's",
+    "description": "Okay food super cheap"
   },
   {
-    "restaurant_name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
+    "restaurant_name": "Chipotle",
+    "description": "More expensive and better than tacobell, but end with the same result."
   },
   {
-    "restaurant_name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
+    "restaurant_name": "Taco Bell",
+    "description": "Go to Del Taco."
+  },
+  {
+    "restaurant_name": "Restaurant 4",
+    "description": "Description 4"
+  },
+  {
+    "restaurant_name": "Restaurant 5",
+    "description": "Description 5"
+  },
+  {
+    "restaurant_name": "Restaurant 6",
+    "description": "Description 6"
+  },
+  {
+    "restaurant_name": "Restaurant 7",
+    "description": "Description 7"
+  },
+  {
+    "restaurant_name": "Restaurant 8",
+    "description": "Description 8"
+  },
+  {
+    "restaurant_name": "Restaurant 9",
+    "description": "Description 9"
+  },
+  {
+    "restaurant_name": "Restaurant 10",
+    "description": "Description 10"
   }
 ]
