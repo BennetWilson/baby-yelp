@@ -16,11 +16,12 @@ router.get('/', async (req, res) => {
         );
 
         const restaurants = restaurantData.map((restaurant) => restaurant.get({ plain: true }));
-        res.json(restaurants);
+        // res.json(restaurants);
         // res.render('homepage', {
         //     restaurants,
         //     logged_in: req.session.logged_in,
         // });
+        res.render("restaurant.handlebars");
     } catch (err) {
         res.status(500).json(err);
     }
