@@ -1,4 +1,24 @@
 <section>
+   <div class="card">
+        <h1>{{restaurant_name}}</h1>
+      </div>
+      <div class="card">{{description}}</div>
+</section>
+<br>
+<section>
+  {{#each reviews as |review| }}
+  <div id="reviewHeaders">
+    {{review.title}}
+  </div>
+  <div id="reviewtext">
+    {{review.text}}
+  </div>
+  {{/each}}
+</section>
+<br>
+
+
+<section>
   <form action="" method="post" class="card">
     <div class="flex">
       <label for="review-title" class="label">Enter a title for your review</label>
@@ -22,4 +42,5 @@
     </div>
     <button class="login-btn">Submit Review</button>
   </form>
+  <script src="/js/review.js"></script>
 </section>

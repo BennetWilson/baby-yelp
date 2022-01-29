@@ -42,24 +42,26 @@ router.get("/", async (req, res) => {
 
 
 
-router.get("/restaurant/:id", withAuth, async (req, res) => {
-  const restaurantData = await Restaurant.findByPk({
-    where: {
-      id: req.params.id,
-    },
-    include: [
-      User,
-      {
-        model: Review,
-        include: [User],
-      },
-    ],
-  });
-  if (req.res.logged_in) {
-    res.redirect("./api/review-routes");
-    return;
-  }
-  res.render("reviews");
-});
+// router.get("restaurants/:id",async (req, res) => {
+//   const restaurantData = await Restaurant.findByPk(req.params.id,{
+//     // where: {
+//     //   id: req.params.id,
+//     // },
+//     include: [
+//       User,
+//       {
+//         model: Review,
+//         include: [User],
+//       },
+//     ],
+//   });
+//   const serializedData = restaurantData.get({ plain: true})
+//         console.log(serializedData)
+//   // if (req.res.logged_in) {
+//   //   res.redirect("./api/review-routes");
+//   //   return;
+//   // }
+//   res.render("leaveReview", {serializedData});
+// });
 
 module.exports = router;

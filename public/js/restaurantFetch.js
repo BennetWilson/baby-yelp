@@ -6,7 +6,7 @@ const restaurantPageHandler = async (event) => {
     const restaurant_name = req.body.restaurant_name;
     const description = req.body.description;
 
-    const response = await fetch('/api/restaurants/', {
+    const response = await fetch('/api/restaurants/:id', {
         method: 'GET',
         body: JSON.stringify({ restaurant_name, description }),
         headers: { 'Content-Type': 'application/json' },

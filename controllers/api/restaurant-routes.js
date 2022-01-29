@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    try {
+    // try {
         const restaurantData = await Restaurant.findByPk(req.params.id,
             {
                 include: [{ model: Review }],
@@ -36,15 +36,17 @@ router.get('/:id', async (req, res) => {
                 },
             }
         );
-        if (!restaurantData) {
-            // res.render('single-review', {restaurant, logged_in: req.session.logged_in});
-            res.status(404).json({ message: 'No restaurant found with this id' });
-            return;
-        } 
-        res.status(200).json(restaurantData);
-    } catch (err) {
-        res.status(500).json(err);
-    }
+        const serializedData = restaurantData.get({ plain: true})
+        console.log(serializedData)
+        // if (!serializedData) {
+        //     // res.render('single-review', {restaurant, logged_in: req.session.logged_in});
+        //     res.status(404).json({ message: 'No restaurant found with this id' });
+        //     return;
+        // } 
+        res.render('leaveReview', serializedData);
+    // } catch (err) {
+    //     res.status(500).json(err);
+    // }
 });
 
 router.post('/', async (req, res) => {
