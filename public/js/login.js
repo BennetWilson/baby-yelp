@@ -11,16 +11,14 @@ const loginFormHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
-        if (response.ok) {
-            document.location.replace('/api/users/dashboard',);
-        } else {
-            alert('Failed to login');
-        }
+    if (response.ok) {
+      document.location.replace("/api/users/dashboard");
+    } else {
+      alert("Failed to login");
     }
   }
-
+};
 
 document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
-    
+  .querySelector(".login-form")
+  .addEventListener("submit", loginFormHandler);

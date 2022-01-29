@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
             }
         );
         const serializedData = restaurantData.get({ plain: true})
-        console.log(serializedData)
+        // console.log(serializedData)
         // if (!serializedData) {
         //     // res.render('single-review', {restaurant, logged_in: req.session.logged_in});
         //     res.status(404).json({ message: 'No restaurant found with this id' });
