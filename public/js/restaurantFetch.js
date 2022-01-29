@@ -13,7 +13,7 @@ const restaurantPageHandler = async (event) => {
     });
 
     if (response.ok) {
-        res.json(response);
+        res.render('restaurant');
     };
 
     // if (leaveReviewBtn === true) {
@@ -26,3 +26,5 @@ const restaurantPageHandler = async (event) => {
 document
     .querySelector('#restaurants')
     .addEventListener('submit', restaurantPageHandler);
+
+// restaurantPageHandler();
