@@ -1,25 +1,32 @@
 <section id="restaurants">
     <div id="restaurants-container">
-            <div id="restaurants-header">
-                <h2>
+           <h2>
                     Restaurants
                 </h2>
+         
+          {{#each restaurants as |restaurant| }}
+            <div id="restaurants-header">
+                
+             
             </div>
-            {{#each restaurants as |restaurant|}}
+           
             <div id="restaurant">
+               
                 <h3>{{restaurant_name}}</h3>
 
                 <p>
-                {{restaurant_name}}.
-                {{description}}
+                {{restaurant.description}}
                 </p>
 
             </div>
             <div id="reviewButton" class="flex">
-                <button type="submit" id="leaveReview" class="login-btn">Leave a Review</button>
+                 <a href="/api/restaurant/{{restaurant.id}}">Leave a review for {{restaurant_name}}</a>
+                
             </div>
         {{/each}}
+        
     </div>
+    
 </section>
 
-<script src="../public/js/restaurantFetch.js"
+{{!-- <script src="js/restaurantFetch.js" --}}

@@ -3,15 +3,10 @@ const { Restaurant, User, Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
-    try {
+    // try {
         const restaurantData = await Restaurant.findAll(
             {
-            include: [{ model: Review }],
-            },
-            {
-                where: {
-                    restaurant_id: req.body.restaurant_id,
-                },
+            include: [Review],
             }
         );
 
@@ -21,10 +16,11 @@ router.get('/', async (req, res) => {
         //     restaurants,
         //     logged_in: req.session.logged_in,
         // });
-        res.render("restaurant.handlebars");
-    } catch (err) {
-        res.status(500).json(err);
-    }
+        console.log(restaurants)
+        res.render('restaurant', {restaurants});
+    // } catch (err) {
+    //     res.status(500).json(err);
+    // }
     
 });
 
