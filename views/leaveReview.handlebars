@@ -19,7 +19,7 @@
 
 
 <section>
-  <form action="" method="post" class="card">
+  <form action="" method="post" class="card review-form" id="review-form">
     <div class="flex">
       <label for="review-title" class="label">Enter a title for your review</label>
       <input
@@ -27,6 +27,7 @@
         name="review-title"
         class="input"
         placeholder="Review Title"
+        id = "title"
       />
     </div>
 
@@ -37,10 +38,10 @@
         name="review-text"
         placeholder="Review text"
         class="input"
-        id="long-text-input"
+        id="text"
       ></textarea>
     </div>
-    <button class="login-btn">Submit Review</button>
+    <button type="submit" class="login-btn">Submit Review</button>
   </form>
   <script src="/js/review.js"></script>
 </section>
