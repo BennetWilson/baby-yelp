@@ -3,7 +3,7 @@ const { Restaurant, User, Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
-    // try {
+    try {
         const restaurantData = await Restaurant.findAll(
             {
             include: [Review],
@@ -18,14 +18,14 @@ router.get('/', async (req, res) => {
         // });
         console.log(restaurants)
         res.render('restaurant', {restaurants});
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }
+    } catch (err) {
+        res.status(500).json(err);
+    }
     
 });
 
 router.get('/:id', async (req, res) => {
-    // try {
+    try {
         const restaurantData = await Restaurant.findByPk(req.params.id,
             {
                 include: [{ model: Review }],
@@ -44,9 +44,9 @@ router.get('/:id', async (req, res) => {
         //     return;
         // } 
         res.render('leaveReview', serializedData);
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 router.post('/', async (req, res) => {

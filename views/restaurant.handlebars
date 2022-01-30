@@ -24,6 +24,33 @@
                 
             </div>
         {{/each}}
+       <section>
+  <form action="" method="post" class="card restaurant-form" id="restaurant-form">
+    <div class="flex">
+      <label for="restaurant-name" class="label">Name of Restaurant</label>
+      <input
+        type="text"
+        name="restaurant-name"
+        class="input"
+        placeholder="Restaurant Name"
+        id = "title"
+      />
+    </div>
+
+    <div class="flex">
+      <label for="restaurant-description" class="label">Description of Restaurant</label>
+      <textarea
+        type="text"
+        name="restaurant-description"
+        placeholder="Restaurant Description"
+        class="input"
+        id="text"
+      ></textarea>
+    </div>
+    <button type="submit" class="add-btn">Add Restaurant</button>
+  </form>
+  <script src="/js/add-restaurant.js"></script>
+</section>
         
     </div>
     
