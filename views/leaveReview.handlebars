@@ -14,8 +14,8 @@
     <h3>Review: </h3>
     <p><div class="cardtext">{{review.text}}</div></p> 
     <br>
-    <a href="http:/localhost:3001/api/reviews/{{review.id}}">Edit Review</a>
-    <a href="">Delete Review</a>
+    <a href="/api/reviews/{{review.id}}">Edit Review</a>
+    <a id="delete-btn" href="/api/reviews/{{review.id}}" >Delete Review</a>
   </div>
   
   {{/each}}
@@ -49,4 +49,5 @@
     <button type="submit" class="login-btn">Submit Review</button>
   </form>
   <script src="/js/review.js"></script>
+  <script src="/js/editReview.js"></script>
 </section>

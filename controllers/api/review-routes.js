@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  try {
+  // try {
     const reviewData = await Review.findByPk(req.params.id, {
       include: [
         {
@@ -29,10 +29,10 @@ router.get("/:id", async (req, res) => {
     });
     //  const reviews = reviewData.map((review) => review.get({ plain: true }));
     const reviews = reviewData.get({ plain: true });
-    res.json(reviews);
-  } catch (err) {
-    res.status(500).json(err);
-  }
+    res.render('singleReview');
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 });
 
 router.post("/", async (req, res) => {
