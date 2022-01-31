@@ -1,19 +1,11 @@
-
 const restaurantId = location.pathname.split("/")[3];
+console.log(location);
 const deleteResClickHandler = async () => {
-   const response = await fetch(`/api/restaurants/${restaurantId}`, {
+    await fetch(`/dashboard/api/${restaurantId}`, {
       method: 'DELETE'
     });
-
-    document.location.reload();
+    location.replace('/api/restaurants');
   };
-  if (response.ok) {
-    location.replace(document.referrer);
-  } else {
-    alert(response.statusText);
-  }
-
-  
   document
-    .querySelector('#delete-res')
-    .addEventListener('submit', deleteResClickHandler);
+    .querySelector('#deleteres')
+    .addEventListener('click', deleteResClickHandler);
