@@ -19,14 +19,6 @@ Restaurant.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-  //   review_id: {
-  //   type: DataTypes.INTEGER,
-  //   allowNull: false,
-  //   references:{
-  //     model:"Review",
-  //     key:'id',
-  //   }
-  // },
   },
   {
     sequelize,
