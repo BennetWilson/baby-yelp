@@ -16,7 +16,6 @@ router.get('/', withAuth, async (req, res) => {
         //     restaurants,
         //     logged_in: req.session.logged_in,
         // });
-        console.log(restaurants)
         res.render('restaurant', {restaurants});
     } catch (err) {
         res.status(500).json(err);
@@ -37,12 +36,6 @@ router.get('/:id',withAuth, async (req, res) => {
             }
         );
         const serializedData = restaurantData.get({ plain: true})
-        // console.log(serializedData)
-        // if (!serializedData) {
-        //     // res.render('single-review', {restaurant, logged_in: req.session.logged_in});
-        //     res.status(404).json({ message: 'No restaurant found with this id' });
-        //     return;
-        // } 
         res.render('leaveReview', serializedData);
     } catch (err) {
         res.status(500).json(err);
@@ -99,5 +92,7 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 })
+
+
 
 module.exports = router;

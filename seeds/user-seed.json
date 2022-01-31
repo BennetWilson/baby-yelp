@@ -13,6 +13,16 @@
       "username": "Amiko",
       "email": "Amiko@gmail.com",
       "password": "password12345"
+    },
+    {
+      "username": "Doctor",
+      "email": "TheTwoTime@gmail.com",
+      "password": "Sprinting"
+    },
+    {
+      "username": "Guy",
+      "email": "Guy@gmail.com",
+      "password": "ViolenceSpeedMomentum"
     }
   ]
   
