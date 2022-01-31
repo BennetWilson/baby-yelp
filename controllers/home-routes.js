@@ -5,7 +5,7 @@ const { Restaurant, Review, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
-  // try {
+  try {
     // Get all projects and JOIN with user data
     const restaurantData = await Restaurant.findAll({
       attributes: ["id", "restaurant_name", "description", "created_at"],
@@ -25,43 +25,25 @@ router.get("/", async (req, res) => {
 
     res.render("login", {
       restaurants,
-      // logged_in: req.session.logged_in,
+      logged_in: req.session.logged_in,
     });
-  // } catch (err) {
-  //   res.status(500).json(err);
-  // }
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-// router.get("/login", (req, res) => {
-//   if (req.session.logged_in) {
-//     res.redirect("dashboard");
-//     return;
-//   }
-//   res.render("login");
-// });
 
+router.get("/signup", (req, res) => {
+  res.render("signup");
+});
 
+router.get("/dashboard", async (req, res) => {
+  // try{
+  res.render('dashboard');
+  //  } catch(err) {
+  //      res.status(500).json(err);
+  //  }
+})
 
-// router.get("restaurants/:id",async (req, res) => {
-//   const restaurantData = await Restaurant.findByPk(req.params.id,{
-//     // where: {
-//     //   id: req.params.id,
-//     // },
-//     include: [
-//       User,
-//       {
-//         model: Review,
-//         include: [User],
-//       },
-//     ],
-//   });
-//   const serializedData = restaurantData.get({ plain: true})
-//         console.log(serializedData)
-//   // if (req.res.logged_in) {
-//   //   res.redirect("./api/review-routes");
-//   //   return;
-//   // }
-//   res.render("leaveReview", {serializedData});
-// });
 
 module.exports = router;
