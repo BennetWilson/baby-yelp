@@ -1,18 +1,31 @@
 <section>
-   <div class="card">
-        <h1>{{restaurant_name}}</h1>
-      </div>
-      <div class="card">{{description}}</div>
+   <div id="edit-res" class="card">
+    <h3>Restaurant Name</h3>
+    <textarea id="res-name" type="text" name="res-name" class="input">{{restaurant_name}}</textarea>
+  </div>
+  <div class="card">
+    <h3>Restaurant Description</h3>
+    <textarea id="res-description" type="text" name="res-description" class="input">{{description}}</textarea>
+  </div> 
+  <br> 
+  <button id="updateRes" class="login-btn" type="button">Update Restaurant</button>
+  <button id="deleteRes" class="login-btn" type="button">Delete Restaurant</button>
 </section>
 <br>
 <section>
+  {{#each reviews as |review|}}
   <div id="reviewHeaders" class="card">
    <h3>Title: </h3>
-    <p><div class="cardbody">{{review.title}}</div></p>
+    <p>{{review.title}}</p>
     <br>
     <h3>Review: </h3>
-    <p><div class="cardtext">{{review.text}}</div></p> 
+    <p>{{review.text}}</p> 
     <br>
     {{!-- <a href="/dashboard/{{review.id}}">Edit Review</a> --}}
   </div>
+  {{/each}}
+
 </section>
+ <script src="/js/updateRestaurant.js"></script>
+  <script src="/js/deleteRestaurant.js"></script> 
+

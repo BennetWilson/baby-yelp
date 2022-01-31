@@ -37,21 +37,68 @@ router.get("/", async (req, res) => {
     }
   });
 
-  router.get('edit/:id',withAuth, async (req, res) => {
+  router.get('/edit/:id', async (req, res) => {
     // try {
         
         const restaurantData = await Restaurant.findByPk(req.params.id,
-            {
-                where: {
-                    restaurant_id: req.body.restaurant_id,
-                },
-            }
+          {
+            include: [{ model: Review }],
+          },
+          {
+            where: {
+              restaurant_id: req.body.restaurant_id,
+            },
+          }
         );
+        console.log(restaurantData);
         const serializedData = restaurantData.get({ plain: true});
+        console.log(serializedData);
         res.render('edit-restaurant', serializedData);
     // } catch (err) {
     //     res.status(500).json(err);
     // }
+});
+
+router.put('/:id',withAuth, async (req, res) => {
+  // try {
+      const updatedRestaurant = await Restaurant.update(
+          {
+              id: req.body.id,
+              restaurant_name: req.body.restaurant_name,
+              description: req.body.description,
+          },
+          {
+              where: {
+                  id: req.params.id,
+              },
+          }
+      )
+      if (!updatedRestaurant) {
+          res.status(404).json({ message: 'No restaurant found with this id'});
+          return;
+      }
+      res.status(200).json(updatedRestaurant);
+  // } catch (err) {
+  //     res.status(500).json(err);
+  // }
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+      const deletedRestaurant = await Restaurant.destroy(
+          {
+              where: {
+                  id: req.params.id
+              }
+          });
+          if (!deletedRestaurant) {
+              res.status(404).json({ message: 'No restaurant found with this id' });
+              return;
+          }
+          res.status(200).json(deletedRestaurant);
+  } catch (err) {
+      res.status(500).json(err);
+  }
 });
 
   module.exports = router;
