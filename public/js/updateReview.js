@@ -1,6 +1,6 @@
 const editFormHandler = async (event) => {
     event.preventDefault();
-    const review_id = location.pathname.split("/")[3];
+    const review_id = location.pathname.split("/")[2];
     const title = document.querySelector('input[name="review-title"]').value;
     const text = document.querySelector('textarea[name="review-body"]').value;
   
