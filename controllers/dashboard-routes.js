@@ -59,11 +59,10 @@ router.get("/", async (req, res) => {
     // }
 });
 
-router.put('/:id',withAuth, async (req, res) => {
-  // try {
+router.put('/:id', async (req, res) => {
+  try {
       const updatedRestaurant = await Restaurant.update(
           {
-              id: req.body.id,
               restaurant_name: req.body.restaurant_name,
               description: req.body.description,
           },
@@ -78,9 +77,9 @@ router.put('/:id',withAuth, async (req, res) => {
           return;
       }
       res.status(200).json(updatedRestaurant);
-  // } catch (err) {
-  //     res.status(500).json(err);
-  // }
+  } catch (err) {
+      res.status(500).json(err);
+  }
 });
 
 router.delete('/:id', async (req, res) => {

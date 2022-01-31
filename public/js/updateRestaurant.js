@@ -19,8 +19,7 @@ const editClickHandler = async (event) => {
     });
     console.log(response);
     if (response.ok) {
-        res.render()
-        location.reload();
+        location.replace(document.referrer);
     } else {
       alert('Failed to update this restaurant');
     }
