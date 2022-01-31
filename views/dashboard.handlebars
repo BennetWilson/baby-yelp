@@ -1,18 +1,21 @@
-<h1>Welcome, {{username}}</h1>
+{{#if logged_in}}
+  <h1>Welcome, {{username}}</h1>
+{{/if}}
 
-<section class="flex-container">
-  <div class="card">
-    <a href="./restaurant.handlebars">Browse restaurants</a>
+<section class="column-flex">
+
+  <div class="card center">
+    <h2>Browse restaurants and leave reviews</h2>
+    <p>You can use Baby Yelp to view the top ten restaurants in the world,</p>
+    <p>leave reviews once you have tried them,</p>
+    <p>and add restaurants that you like!</p>
+    <br />
+    <h3>Get started below!</h3>
   </div>
-  <div class="card">
-    {{!-- <a href="/leavereview">Leave a review</a> --}}
-  </div>
-  <div class="card">
-    <a href=""></a>
-  </div>
+
 </section>
-<div>
-  <div class="card">
-    <a href="/api/restaurants">Browse restaurants</a>
+<div class="column-flex">
+  <div class="card flex-container">
+    <a href="/api/restaurants" class="login-btn">Browse restaurants</a>
   </div>
 </div>
