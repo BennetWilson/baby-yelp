@@ -1,0 +1,108 @@
+<<<<<<< Updated upstream
+=======
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-color:gray;
+  --card-text-color: white;
+  --card-border-color: #eeee;
+  --card-background-color: gray;
+}
+
+body {
+  background-color: #eeee(243, 171, 113);
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.app-title {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 300px;
+  flex: 1;
+}
+
+h1 {
+  font-size: 20px;
+  border: 2px, solid, whitesmoke;
+  border-radius: 5px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.column-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  flex: 1;
+  background-color: var(--card-background-color);
+  color: var(--card-text-color);
+  border: 2px solid var(--card-border-color);
+  border-radius: 5px;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  min-width: 50%;
+  max-width: 90%;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  margin: 0.25rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--card-text-color);
+  color: var(--card-background-color);
+  border: 2px solid var(--card-border-color);
+  border-radius: 4px;
+  line-height: 1.25rem;
+}
+
+#long-text-input {
+  height: 200px;
+}
+
+.login-btn {
+  font-size: 1rem;
+  background-color: var(--card-background-color);
+  color: var(--card-text-color);
+  border: 2px solid var(--card-border-color);
+  border-radius: 5px;
+  padding: 0.25rem;
+  margin: 0.25rem;
+}
+
+.login-btn:hover {
+  background-color: var(--card-text-color);
+  color: var(--card-background-color);
+  transition: ease-in-out 10ms;
+}
+
+.rating {
+  width: 180px;
+}
+
+.rating__star {
+  cursor: pointer;
+  color: blue;
+}
+>>>>>>> Stashed changes

@@ -20,6 +20,28 @@ Review.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+<<<<<<< Updated upstream
+=======
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+    restaurant_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "restaurant",
+        key: "id",
+      },
+    },
+    stars: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
+>>>>>>> Stashed changes
   },
   {
     sequelize,

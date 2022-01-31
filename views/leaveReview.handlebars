@@ -1,0 +1,143 @@
+<section>
+  <div class="card">
+  <h1>{{restaurant_name}}</h1>
+      <div class="rating">
+    {{#greaterThan review_stars 0}}
+      <i class="rating__star fas fa-star"></i>
+    {{else}}
+      <i class="rating__star far fa-star"></i>
+    {{/greaterThan}}
+    {{#greaterThan review_stars 1}}
+      <i class="rating__star fas fa-star"></i>
+    {{else}}
+      <i class="rating__star far fa-star"></i>
+    {{/greaterThan}}
+    {{#greaterThan review_stars 2}}
+      <i class="rating__star fas fa-star"></i>
+    {{else}}
+      <i class="rating__star far fa-star"></i>
+    {{/greaterThan}}
+    {{#greaterThan review_stars 3}}
+      <i class="rating__star fas fa-star"></i>
+    {{else}}
+      <i class="rating__star far fa-star"></i>
+    {{/greaterThan}}
+    {{#greaterThan review_stars 4}}
+      <i class="rating__star fas fa-star"></i>
+    {{else}}
+      <i class="rating__star far fa-star"></i>
+    {{/greaterThan}}
+  </div>
+
+  </div>
+  <div class="card">{{description}}</div>
+</section>
+<br>
+<section>
+  {{#each reviews as |review| }}
+  <div id="reviewHeaders" class="card">
+    <h3>Title: </h3>
+    <br>
+
+    {{!-- STARS --}}
+    <div class="rating">
+      {{#greaterThan review.stars 0}}
+        <i class="rating__star fas fa-star"></i>
+      {{else}}
+        <i class="rating__star far fa-star"></i>
+      {{/greaterThan}}
+      {{#greaterThan review.stars 1}}
+        <i class="rating__star fas fa-star"></i>
+      {{else}}
+        <i class="rating__star far fa-star"></i>
+      {{/greaterThan}}
+      {{#greaterThan review.stars 2}}
+        <i class="rating__star fas fa-star"></i>
+      {{else}}
+        <i class="rating__star far fa-star"></i>
+      {{/greaterThan}}
+      {{#greaterThan review.stars 3}}
+        <i class="rating__star fas fa-star"></i>
+      {{else}}
+        <i class="rating__star far fa-star"></i>
+      {{/greaterThan}}
+      {{#greaterThan review.stars 4}}
+        <i class="rating__star fas fa-star"></i>
+      {{else}}
+        <i class="rating__star far fa-star"></i>
+      {{/greaterThan}}
+    </div>
+
+    <p><div class="cardbody">{{review.title}}</div></p>
+    <br>
+    <h3>Review: </h3>
+    <p><div class="cardtext">{{review.text}}</div></p> 
+    <br>
+    <a href="/dashboard/{{review.id}}">Edit Review</a>
+  </div>
+  
+  {{/each}}
+</section>
+<br>
+
+
+<section>
+  <form action="" method="post" class="card review-form" id="review-form">
+    <div class="flex">
+      <label for="title" class="label">Enter a title for your review</label>
+      <input
+        type="text"
+        name="title"
+        class="input"
+        placeholder="Review Title"
+        id = "title"
+      />
+    </div>
+
+    <div class="flex">
+      <label for="review-text" class="label">Type your review</label>
+      <textarea
+        type="text"
+        name="text"
+        placeholder="Review text"
+        class="input"
+        id="text"
+      ></textarea>
+    </div>
+
+    {{!-- Add stars here --}}
+    <div class="flex">
+      <div class="rating">
+        <i class="rating__star far fa-star"></i>
+        <i class="rating__star far fa-star"></i>
+        <i class="rating__star far fa-star"></i>
+        <i class="rating__star far fa-star"></i>
+        <i class="rating__star far fa-star"></i>
+      </div>
+      <input
+        type="hidden"
+        name="stars"
+        class="input"
+        placeholder="Review Title"
+        id="stars"
+      />
+    </div>
+
+    <button type="submit" class="login-btn">Submit Review</button>
+  </form>
+  <script src="/js/review.js"></script>
+  <script src="/js/editReview.js"></script>
+</section>
+
+<section>
+  <form action="" method="delete" class="card review-form" id="review-form">
+
+    <div class="flex">
+      {{!-- <button id="delete-res" type="submit" class="login-btn">Delete {{restaurant_name}}</button> --}}
+
+    </div>
+
+  </form>
+  <script src="/js/deleteRestaurant.js"></script>
+
+</section>

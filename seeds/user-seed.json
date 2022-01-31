@@ -1,0 +1,28 @@
+[
+    {
+      "username": "Sal",
+      "email": "sal@gmail.com",
+      "password": "password12345"
+    },
+    {
+      "username": "Lernantino",
+      "email": "Lernantino@gmail.com",
+      "password": "password12345"
+    },
+    {
+      "username": "Amiko",
+      "email": "Amiko@gmail.com",
+      "password": "password12345"
+    },
+    {
+      "username": "Doctor",
+      "email": "TheTwoTime@gmail.com",
+      "password": "Sprinting"
+    },
+    {
+      "username": "Guy",
+      "email": "Guy@gmail.com",
+      "password": "ViolenceSpeedMomentum"
+    }
+  ]
+  
