@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: #eeee(243, 171, 113);
+  background-color: rgba(204, 204, 204, 0.933) (243, 171, 113);
   color: black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -40,6 +40,10 @@ h1 {
 .flex-container {
   display: flex;
   justify-content: center;
+}
+
+.flex-left {
+  display: flex;
 }
 
 .column-flex {
@@ -110,4 +114,8 @@ h1 {
   padding: 0.25rem;
   margin-bottom: 1rem;
   background-color: var(--card-background-color);
+}
+
+.center {
+  text-align: center;
 }

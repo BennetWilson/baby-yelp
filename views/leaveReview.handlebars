@@ -1,26 +1,25 @@
-<section>
-   <div class="card">
-        <h1>{{restaurant_name}}</h1>
-      </div>
-      <div class="card">{{description}}</div>
-</section>
-<br>
-<section>
-  {{#each reviews as |review| }}
-  <div id="reviewHeaders" class="card">
-   <h3>Title: </h3>
-    <p><div class="cardbody">{{review.title}}</div></p>
-    <br>
-    <h3>Review: </h3>
-    <p><div class="cardtext">{{review.text}}</div></p> 
-    <br>
-    <a href="/dashboard/{{review.id}}">Edit Review</a>
+<section class="card">
+  <div class="card">
+    <h1>{{restaurant_name}}</h1>
   </div>
-  
+  <div class="card">{{description}}</div>
+</section>
+<br />
+<section>
+  {{#each reviews as |review|}}
+    <div id="reviewHeaders" class="card">
+      <h3>Title: </h3>
+      <p><div class="cardbody">{{review.title}}</div></p>
+      <br />
+      <h3>Review: </h3>
+      <p><div class="cardtext">{{review.text}}</div></p>
+      <br />
+      <a href="/dashboard/{{review.id}}" class="login-btn">Edit Review</a>
+    </div>
+
   {{/each}}
 </section>
-<br>
-
+<br />
 
 <section>
   <form action="" method="post" class="card review-form" id="review-form">
@@ -31,7 +30,7 @@
         name="review-title"
         class="input"
         placeholder="Review Title"
-        id = "title"
+        id="title"
       />
     </div>
 

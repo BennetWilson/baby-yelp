@@ -17,7 +17,6 @@ router.get("/", async (req, res) => {
             attributes: ["username"],
           },
         },
-       
       ],
     });
     const restaurants = restaurantData.map((post) => post.get({ plain: true }));
@@ -31,18 +30,19 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
 router.get("/dashboard", async (req, res) => {
   // try{
-  res.render('dashboard');
+  res.render("dashboard", {
+    username: req.session.username,
+    logged_in: req.session.logged_in,
+  });
   //  } catch(err) {
   //      res.status(500).json(err);
   //  }
-})
-
+});
 
 module.exports = router;
