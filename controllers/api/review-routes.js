@@ -17,6 +17,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   // try {
+    console.log(req.params.id)
     const reviewData = await Review.findByPk(req.params.id, {
       include: [
         {
@@ -29,7 +30,7 @@ router.get("/:id", async (req, res) => {
     });
     //  const reviews = reviewData.map((review) => review.get({ plain: true }));
     const reviews = reviewData.get({ plain: true });
-    res.render('singleReview');
+    res.render('singleReview', reviews);
   // } catch (err) {
   //   res.status(500).json(err);
   // }
@@ -50,6 +51,7 @@ router.post("/", async (req, res) => {
 });
 router.put("/:id", async (req, res) => {
   // try {
+    console.log(req.body)
   const [affectedRows] = await Review.update(req.body, {
     where: {
       id: req.params.id,
