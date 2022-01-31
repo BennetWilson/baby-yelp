@@ -8,8 +8,12 @@
 <section>
   {{#each reviews as |review|}}
     <div id="reviewHeaders" class="card">
-      <h3>Title: </h3>
-      <p><div class="cardbody">{{review.title}}</div></p>
+
+      <div class="flex">
+        <h3>Title: </h3>
+        <p><div class="cardbody">{{review.title}}</div></p>
+
+      </div>
       <br />
       <h3>Review: </h3>
       <p><div class="cardtext">{{review.text}}</div></p>

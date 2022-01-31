@@ -6,17 +6,19 @@
 :root {
   --background-color: gray;
   --card-text-color: white;
-  --card-border-color: #eeee;
+  --card-border-color: white;
   --card-background-color: gray;
+  --maybe-color: rgba(72, 182, 182, 0.933);
 }
 
 body {
-  background-color: rgba(204, 204, 204, 0.933) (243, 171, 113);
-  color: black;
+  background-color: rgb(73, 73, 73);
+  color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .app-title {
+  background-color: gray;
   display: flex;
   justify-content: center;
 }
@@ -112,8 +114,9 @@ h1 {
   border: 2px solid var(--card-border-color);
   border-radius: 5px;
   padding: 0.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   background-color: var(--card-background-color);
+  box-shadow: 15px 5px 5px black;
 }
 
 .center {
