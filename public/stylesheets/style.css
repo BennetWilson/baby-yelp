@@ -4,7 +4,7 @@
 }
 
 :root {
-  --background-color:gray;
+  --background-color: gray;
   --card-text-color: white;
   --card-border-color: #eeee;
   --card-background-color: gray;
@@ -57,8 +57,16 @@ h1 {
   border-radius: 5px;
   padding: 0.25rem;
   margin: 0.25rem;
-  min-width: 50%;
-  max-width: 90%;
+  min-width: 70%;
+  /* max-width: 90%; */
+}
+
+.width {
+  width: 80%;
+}
+
+.width-60 {
+  width: 60%;
 }
 
 .label {
@@ -81,6 +89,7 @@ h1 {
 
 .login-btn {
   font-size: 1rem;
+  text-decoration: none;
   background-color: var(--card-background-color);
   color: var(--card-text-color);
   border: 2px solid var(--card-border-color);
