@@ -103,3 +103,11 @@ h1 {
   color: var(--card-background-color);
   transition: ease-in-out 10ms;
 }
+
+.indiv-restaurant {
+  border: 2px solid var(--card-border-color);
+  border-radius: 5px;
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+  background-color: var(--card-background-color);
+}
