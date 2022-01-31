@@ -6,7 +6,6 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
     const restaurantData = await Restaurant.findAll({
       attributes: ["id", "restaurant_name", "description", "created_at"],
       include: [

@@ -4,15 +4,15 @@
 }
 
 :root {
-  --background-color: rgb(243, 171, 113);
-  --card-text-color: rgb(255, 217, 111);
-  --card-border-color: darkorange;
-  --card-background-color: rgb(228, 114, 77);
+  --background-color:gray;
+  --card-text-color: white;
+  --card-border-color: #eeee;
+  --card-background-color: gray;
 }
 
 body {
-  background-color: rgb(243, 171, 113);
-  color: whitesmoke;
+  background-color: #eeee(243, 171, 113);
+  color: black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 

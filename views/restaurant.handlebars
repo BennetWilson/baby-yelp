@@ -20,8 +20,8 @@
 
             </div>
             <div id="reviewButton" class="flex">
-                 <a href="http://localhost:3001/api/restaurants/{{restaurant.id}}" class='login-btn'>Leave a review for {{restaurant_name}}</a>
-                 <a href="" >Edit {{restaurant_name}}</a>
+                 <a href="/api/restaurants/{{restaurant.id}}" class='login-btn'>Leave a review for {{restaurant_name}}</a>
+                 <a href="/dashboard/edit/{{restaurant.id}}" id='edit-res'>Edit {{restaurant_name}}</a>
             </div>
         {{/each}}
        <section>

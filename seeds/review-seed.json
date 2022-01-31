@@ -1,20 +1,62 @@
 [
-    {
-      "text": "Comment text 1",
-      "title": "Review 1",
-      "user_id": 1,
-      "restaurant_id": 1
-    },
-    {
-        "text": "Comment text 2",
-        "title": "Review 2",
-        "user_id": 2,
-        "restaurant_id": 2
-    },
-    {
-        "text": "Comment text 3",
-        "title": "Review 3",
-        "user_id": 3,
-        "restaurant_id": 3
-    }
-  ]
+  {
+    "title": "Noma Is Amazing",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "user_id": 1,
+    "restaurant_id": 1
+  },
+  {
+    "title": "Geranium Is Amazing",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "user_id": 2,
+    "restaurant_id": 2
+  },
+  {
+    "title": "Asador Etxebarri Is Amazing",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "user_id": 3,
+    "restaurant_id": 3
+  },
+  {
+    "title": "Central Is Amazing",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "user_id": 4,
+    "restaurant_id": 4
+  },
+  {
+    "title": "Disfrutar Is Amazing",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "user_id": 5,
+    "restaurant_id": 5
+  },
+  {
+    "title": "Frantzén Is Amazing",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "user_id": 1,
+    "restaurant_id": 6
+  },
+  {
+    "title": "Maido Is Amazing",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "user_id": 2,
+    "restaurant_id": 7
+  },
+  {
+    "title": "Odette Is Amazing",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "user_id": 3,
+    "restaurant_id": 8
+  },
+  {
+    "title": "Pujol Is Amazing",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "user_id": 4,
+    "restaurant_id": 9
+  },
+  {
+    "title": "The Chairman Is Amazing",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "user_id": 5,
+    "restaurant_id": 10
+  }
+]

@@ -1,5 +1,5 @@
 
-const reviewId = location.pathname.split("/")[3];
+const reviewId = location.pathname.split("/")[2];
 
 // const restaurant_id = 
 
@@ -8,9 +8,7 @@ const deleteClickHandler = async () => {
       method: 'DELETE'
     });
 
-    // document.location.replace(`/api/restaurants/${restaurant_id}`);
     location.replace(document.referrer);
-    // document
 
   };
   document
