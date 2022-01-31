@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Restaurant, User, Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const restaurantData = await Restaurant.findAll(
             {
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
     
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id',withAuth, async (req, res) => {
     try {
         const restaurantData = await Restaurant.findByPk(req.params.id,
             {
@@ -49,7 +49,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newRestaurant = await Restaurant.create(req.body);
         res.status(200).json(newRestaurant);
@@ -58,7 +58,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id',withAuth, async (req, res) => {
     // try {
         const updatedRestaurant = await Restaurant.update(
             {
