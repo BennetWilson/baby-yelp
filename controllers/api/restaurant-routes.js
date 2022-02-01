@@ -76,7 +76,8 @@ router.put('/:id',withAuth, async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-    // try {
+    console.log(req.params.id);
+    try {
         const deletedRestaurant = await Restaurant.destroy(
             {
                 where: {
@@ -88,9 +89,11 @@ router.delete('/:id', async (req, res) => {
                 return;
             }
             res.status(200).json(deletedRestaurant);
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }
+            
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 })
 
 
