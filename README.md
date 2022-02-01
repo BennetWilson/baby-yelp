@@ -16,7 +16,7 @@ This application is a restaurant review page. You can add your favorite restaura
 - Bennet Wilson
 
 ### Usage 
-
+![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/89158559/151908373-a9fac513-01db-49a7-8f3b-96c38a1e1e19.gif)
 ### Technology used
 - Node.js
 - Sequelize
